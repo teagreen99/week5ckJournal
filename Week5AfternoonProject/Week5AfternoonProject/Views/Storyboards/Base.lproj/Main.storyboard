@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TWq-K3-Z5L">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Journal-->
+        <scene sceneID="qs1-3i-s1z">
+            <objects>
+                <tableViewController storyboardIdentifier="EntryListView" id="nka-p8-uit" customClass="EntryListTableViewController" customModule="Week5AfternoonProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fyj-NB-ZFa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" id="TRR-IC-LmF">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TRR-IC-LmF" id="dGq-d0-szS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <connections>
+                                    <segue destination="Py2-4s-Du7" kind="show" identifier="toEditDetailVC" id="W41-hV-2bj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nka-p8-uit" id="krU-Ng-kNG"/>
+                            <outlet property="delegate" destination="nka-p8-uit" id="1En-fg-SMD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Journal" id="iHj-lc-3Ix">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NJM-wl-w5x">
+                            <connections>
+                                <segue destination="Py2-4s-Du7" kind="show" id="mLk-U2-iIT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FtU-ro-ZHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4072" y="94"/>
+        </scene>
+        <!--Entry Detail View Controller-->
+        <scene sceneID="ENN-YG-qDw">
+            <objects>
+                <viewController id="Py2-4s-Du7" customClass="EntryDetailViewController" customModule="Week5AfternoonProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0E0-E8-FC7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="jQz-jO-5Jg">
+                                <rect key="frame" x="18" y="160" width="380" height="662.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter journal entry title here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6Z-tp-dJ1">
+                                        <rect key="frame" x="80" y="0.0" width="220" height="43.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" keyboardDismissMode="onDrag" text="Enter journal entry here..." allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBc-1q-kIK">
+                                        <rect key="frame" x="16" y="109.5" width="348" height="443.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.014629550747104411" green="0.014558876588905839" blue="0.014700224905302983" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Geneva" family="Geneva" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="alert" smartDashesType="yes"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY1-da-ufo">
+                                        <rect key="frame" x="142.5" y="619" width="95" height="43.5"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                        <color key="tintColor" red="0.99709504839999996" green="0.0066451742309999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="CLEAR">
+                                            <color key="titleColor" name="AccentColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="Py2-4s-Du7" eventType="touchUpInside" id="eoi-VL-dCt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xBc-1q-kIK" secondAttribute="trailing" constant="16" id="CEy-Tq-dIi"/>
+                                    <constraint firstItem="xBc-1q-kIK" firstAttribute="centerX" secondItem="jQz-jO-5Jg" secondAttribute="centerX" id="IxX-ei-iUi"/>
+                                    <constraint firstItem="xBc-1q-kIK" firstAttribute="leading" secondItem="jQz-jO-5Jg" secondAttribute="leading" constant="16" id="JCA-MK-KFe"/>
+                                    <constraint firstItem="xBc-1q-kIK" firstAttribute="centerY" secondItem="jQz-jO-5Jg" secondAttribute="centerY" id="S2l-bJ-S8g"/>
+                                    <constraint firstItem="xBc-1q-kIK" firstAttribute="height" secondItem="jQz-jO-5Jg" secondAttribute="height" multiplier="0.669434" id="gvw-nw-2fc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TwS-Sg-cpi"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="jQz-jO-5Jg" firstAttribute="top" secondItem="TwS-Sg-cpi" secondAttribute="top" constant="72" id="15m-nY-kzK"/>
+                            <constraint firstItem="TwS-Sg-cpi" firstAttribute="bottom" secondItem="jQz-jO-5Jg" secondAttribute="bottom" constant="39.5" id="4pm-5y-e8L"/>
+                            <constraint firstItem="TwS-Sg-cpi" firstAttribute="trailing" secondItem="jQz-jO-5Jg" secondAttribute="trailing" constant="16" id="WbZ-li-Qe9"/>
+                            <constraint firstItem="jQz-jO-5Jg" firstAttribute="leading" secondItem="TwS-Sg-cpi" secondAttribute="leading" constant="18" id="aGY-xW-Xmd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KSl-It-K3I">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Fnz-Pg-rBl">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Py2-4s-Du7" id="0nW-vp-XAu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextField" destination="xBc-1q-kIK" id="AW9-Is-MX5"/>
+                        <outlet property="titleTextField" destination="T6Z-tp-dJ1" id="Aah-Gh-n05"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gvK-Bj-foO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3262.3188405797105" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w6k-Us-VIC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TWq-K3-Z5L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dtR-wQ-Hsk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nka-p8-uit" kind="relationship" relationship="rootViewController" id="jb2-ou-vjQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htt-Nx-O0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4996" y="95"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W41-hV-2bj"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
